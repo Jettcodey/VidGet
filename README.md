@@ -17,7 +17,7 @@ git clone https://github.com/BurakYs/VidGet.git
 cd VidGet
 # Install the dependencies in seperate terminals
 cd client && npm install
-cd server && npm install
+cd server && npm install 
 ```
 
 Start the development server:
@@ -26,7 +26,7 @@ Start the development server:
 # Start the client
 cd client && npm run dev
 # Start the server
-cd server && npm run dev
+cd server && npm run build && npm run dev
 ```
 
 ## 📦 Built With
