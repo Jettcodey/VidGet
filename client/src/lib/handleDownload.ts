@@ -31,13 +31,15 @@ export async function handleDownload(
     scraperNameStore.set(scraperName);
 
     isLoadingStore.set(true);
-    const response = await fetch(`${config.rootUrl}/scrapers/${scraperName.toLowerCase()}`, {
+
+    const response = await fetch(`${config.apiUrl}/scrapers/${scraperName.toLowerCase()}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ url: get(urlStore).replace(/http:\/\//, 'https://') })
     }).catch(() => null);
+
     isLoadingStore.set(false);
 
     if (!response || !response.ok) {
